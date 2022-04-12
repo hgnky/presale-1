@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Token sale page">
+
+    <title>SHIBX100 PRESALE</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+   
+    <script>
+        var test = false; // False if contracts are on Mainnet
+        var contractAddressSale = '0x4A48361e56674DBAe26DB60d90701E423D9cc277';
+        var contractAddressToken = '0xbF3d178d8fDf3fe39BD7cb50c8499Bd80Baf3454';
+    </script>
+    
+    <style>
+        
+        body {font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #FFFFFF;  font-size: 16px; font-weight: 400;
+        background: rgb(3,91,88);
+background: -moz-radial-gradient(circle, rgba(3,91,88,1) 17%, rgba(1,13,28,1) 68%);
+background: -webkit-radial-gradient(circle, rgba(3,91,88,1) 17%, rgba(1,13,28,1) 68%);
+background: radial-gradient(circle, rgba(3,91,88,1) 17%, rgba(1,13,28,1) 68%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#035b58",endColorstr="#010d1c",GradientType=1);
+}
+
+        h1 { font-size: 24px; font-weight: 700;}
+        h2 { font-size: 22px; font-weight: 500;}
+       #topen {border:2px dotted black;
+          border-radius: 0px 0px 0px 0px;
+          margin-left: 5%;
+          margin-right: 5%;
+          text-align: center;
+          padding:10px;}
+
+#toptopeng {background: rgb(6,6,6);
+            background: -moz-linear-gradient(90deg, rgba(6,6,6,1) 17%, rgba(21,11,75,1) 100%);
+            background: -webkit-linear-gradient(90deg, rgba(6,6,6,1) 17%, rgba(21,11,75,1) 100%);
+            background: linear-gradient(90deg, rgba(6,6,6,1) 17%, rgba(21,11,75,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#060606",endColorstr="#150b4b",GradientType=1);
+          border-radius: 20px 20px 0px 0px;
+          margin-left: 5%;
+          margin-right: 5%;
+          text-align: center;
+          padding:10px;}
+
+#toptopeng button {background: rgb(8,6,6);}
+#topen button {background: rgb(6,6,6);padding:15px;border-radius:12px;font-size:10px}
+#get {background-color: grey;padding-left:165px;border:2px dotted;padding-right:170px;padding-top:15px;padding-bottom:15px;margin-left: 2%;border-radius: 10px 10px 10px 10px;margin-top: 30px;font-color: black;}
+
+        .small {
+            font-size: 12px;
+        }
+
+        .err {
+             color: red;
+        }
+        
+        .green {
+             color: red;
+        }
+        
+        .blue {
+             color: blue;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+        
+        a {
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+        
+        a:hover {
+          color: #C0C0C0;
+        }
+        
+        .clickable {
+            cursor: pointer;
+        }
+        
+        .clickable:hover {
+            color: #C0C0C0;
+        }
+        
+        button {
+          background-color: #FDA913;
+          border: none;
+          border-radius: 50px;
+          color: white;
+          padding: 15px 30px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #FFFFFF;
+          color: #FDA913;
+        }
+        
+        button[disabled] {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        hr {
+            margin: 20px;
+            border: 0;
+            border-top: 1px dashed;
+        }
+        
+        input {
+          text-align: center;
+          font-size: 18px;
+          background-color: #000000;
+          color: #FFFFFF;
+          border:1px solid;
+          max-width: 100%;
+        }
+        #BuyTokens {
+         background: rgb(253,169,19);
+background: -moz-linear-gradient(90deg, rgba(253,169,19,1) 17%, rgba(130,15,70,1) 68%);
+background: -webkit-linear-gradient(90deg, rgba(253,169,19,1) 17%, rgba(130,15,70,1) 68%);
+background: linear-gradient(90deg, rgba(253,169,19,1) 17%, rgba(130,15,70,1) 68%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fda913",endColorstr="#820f46",GradientType=1);
+          border-radius: 0px 0px 20px 20px;
+          margin-left: 5%;
+          margin-right: 5%;
+          text-align: center;
+          color: white;
+          padding: 10px;
+          box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.1);;
+        }
+        #buyAmount{
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: #000000;
+            height: 30px;
+            width: 350px;
+            border: none;
+            padding:20px            ;
+        }
+        #logo{
+          width: 100px;
+          height: 100px;
+          margin-top: 20px;
+        }
+        #buyBtn {
+          background: rgb(0,96,98);
+          background: -moz-linear-gradient(90deg, rgba(0,96,98,1) 0%, rgba(33,217,16,1) 100%);
+          background: -webkit-linear-gradient(90deg, rgba(0,96,98,1) 0%, rgba(33,217,16,1) 100%);
+          background: linear-gradient(90deg, rgba(0,96,98,1) 0%, rgba(33,217,16,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006062",endColorstr="#21d910",GradientType=1);
+          color: #FFFFFF;
+          box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        #HomeButton{
+          margin-top: 50px;
+          align-content: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <div id="toptopeng" style="text-align: center">
+        <button id="connect" style="font-size: 12px">Connect Wallet</button> <button class="switch" id="addMainBSC" style="font-size: 12px;">To BSC Mainnet</button>
+        <span id="nometamask" class="err" style="display: none">Please install Metamask first...</span>
+        <div class="network small"><span id="curnet"><span class="err">Please install <a target="_blank" href="https://metamask.io">Metamask</a> or <a target="_blank" href="https://trustwallet.com/">Trust Wallet</a> </span></span> <span id="myAddr"></span></div>
+    </div>
+    
+    <div id="topen" style="text-align: center">
+
+        <a href="https://www.shibx100.io">
+            <img id="logo" src="logo.png" alt="shibx100_Logo" srcset="">
+        </a>
+        <h2><span id="tokenName">ShibX100</span> (<span class="tokenSymbol">SHIBX100</span>)</h2>
+        <p><a target="_blank" href="https://bscscan.com/token/0xbF3d178d8fDf3fe39BD7cb50c8499Bd80Baf3454" id="tokenAddress">0xbF3d178d8fDf3fe39BD7cb50c8499Bd80Baf3454</a></p>
+        <!-- Reserved in case you want to show decimals and total supply: Decimals <span id="#tokenDecimals"></span> Total supply <span id="#tokenSupply"></span>-->
+        <p><h6>DO NOT SEND BNB TO THE TOKEN CONTRACT!</h6></p>
+        <p><button id="addToken" style="text-align: center">ADD TO METAMASK</button> <button id="copyToken" style="text-align: center">COPY CONTRACT</button></p>
+    </div>
+    
+    
+    <div style="text-align: center">
+        <h1>PRESALE STATUS</h1>
+        <h1>
+            <span id="finished" style="display:none" class="status green">Finished</span>
+            <span id="active" style="display:none" class="status green"><blink>PRESALE ONGOING</blink></span>
+        </h1>
+    </div>
+  
+    
+    <div id="BuyTokens" style="text-align: center">
+        <h1>BUY SHIBX100</h1>
+        <p>1 BNB = <span class="rate">41528300.0</span> <span class="tokenSymbol">SHIBX100</span></p>
+        <p><input type="number" id="buyAmount" value="0" min="0"> BNB</p>
+<br>
+        <p><span id="get">0</span> <span class="tokenSymbol">SHIBX100</span></p><br>
+        <p><button id="buyBtn" style="text-align: center">BUY SHIBX100</button></p>
+<br>
+        <p>MY WALLET: <span id="myTokens"></span> <span class="tokenSymbol">SHIBX100</span></p>
+    </div>
+
+    <div id="HomeButton">
+        <a href="https://www.shibx100.io"><button  style="text-align: center" >Back to Home</button></p>
+    </div>
+    
+<script src='https://dappbuilder.org/js/jquery-3.6.0.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/js/ethers-5.0.umd.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='https://dappbuilder.org/bsc/tokensale2/js/tokensale.ui.js' type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
